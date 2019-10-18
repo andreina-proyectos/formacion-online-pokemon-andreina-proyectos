@@ -10,7 +10,7 @@ const PokeCard = (props) => {
 
       {pokeTypesArray.map(pokeType => {
         return( 
-          <p className="pokemon__type">{pokeType.type.name}</p>
+          <p key={`${id}_${pokeType.type.name}`} className="pokemon__type">{pokeType.type.name}</p>
         )
       })}
     </React.Fragment>
