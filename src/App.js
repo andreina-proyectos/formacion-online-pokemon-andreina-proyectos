@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import PokeCard from './PokeCard';
 
 class App extends React.Component {
   constructor(props) {
@@ -61,15 +62,13 @@ class App extends React.Component {
                   console.log(pokeTypesArray);
                   return(
                     <li key={`${pokemon.name}_${pokemon.id}`} className="results__list__pokemon">
-                      <img src={pokemon.sprites.front_default} alt={pokemon.name} className="pokemon__img"/>
-                      <p className="pokemon_id">ID/{pokemon.id}</p>
-                      <p className="pokemon__name">{pokemon.name}</p>
 
-                      {pokeTypesArray.map(pokeType => {
-                        return( 
-                          <p className="pokemon__type">{pokeType.type.name}</p>
-                        )
-                      })}
+                      <PokeCard
+                      img={pokemon.sprites.front_default}
+                      id={pokemon.id}
+                      name={pokemon.name}
+                      pokeTypesArray={pokeTypesArray}
+                      />
                     </li> 
                   )
                 })}
