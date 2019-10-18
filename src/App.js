@@ -7,6 +7,7 @@ class App extends React.Component {
     this.state = {
       pokeArray: [],
       pokeInfoArray: [],
+      pokeQuery:'',
     }
   }
 
@@ -40,11 +41,19 @@ class App extends React.Component {
       })
   }
 
+  handleInputChange = (event) => {
+    const pokemonSearched = event.currentTarget.value;
+    this.setState({
+      pokeQuery:pokemonSearched
+    })
+  }
+
   render() {
     const {pokeInfoArray} = this.state;
     return (
       <div className="App">
         <React.Fragment>
+          <input onChange={this.handleInputChange} type="text" className="search__input"/>
           <div className="results__wrapper">
             <ul className="results__list">            
                 {pokeInfoArray.map(pokemon => {
@@ -52,7 +61,7 @@ class App extends React.Component {
                   console.log(pokeTypesArray);
                   return(
                     <li key={`${pokemon.name}_${pokemon.id}`} className="results__list__pokemon">
-                      <img src={pokemon.sprites.front_default} alt={`Photo of ${pokemon.name} pokemon`} className="pokemon__img"/>
+                      <img src={pokemon.sprites.front_default} alt={pokemon.name} className="pokemon__img"/>
                       <p className="pokemon_id">ID/{pokemon.id}</p>
                       <p className="pokemon__name">{pokemon.name}</p>
 
