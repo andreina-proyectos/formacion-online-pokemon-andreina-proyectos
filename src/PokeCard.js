@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const PokeCard = (props) => {
   const {imgFront, imgBack, id, name, pokeTypesArray} = props;
@@ -25,5 +26,13 @@ const PokeCard = (props) => {
     </React.Fragment>
   )
 }
+
+PokeCard.propTypes = {
+  imgFront: PropTypes.string.isRequired,
+  imgBack: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  pokeTypesArray: PropTypes.array.isRequired,
+};
 
 export default PokeCard;
