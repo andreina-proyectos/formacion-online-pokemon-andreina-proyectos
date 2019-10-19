@@ -15,10 +15,11 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getMorePokemon(0);
-    // this.getMorePokemon(20);
-    // this.getMorePokemon(40);
-    // this.getMorePokemon(60);
-    // this.getMorePokemon(80);
+    this.getMorePokemon(20);
+    this.getMorePokemon(40);
+    this.getMorePokemon(60);
+    this.getMorePokemon(80);
+    this.getMorePokemon(100);
     this.toggleFrontBack()
   }
 
@@ -81,6 +82,9 @@ class App extends React.Component {
                 .filter(pokemon => 
                   pokemon.name.toUpperCase().includes(this.state.pokeQuery.toUpperCase())
                 )
+                .sort((pokemona,pokemonb) => {
+                  return pokemona.id - pokemonb.id;
+                })
                 .map(pokemon => {
                   const pokeTypesArray = pokemon.types;
                   return(
