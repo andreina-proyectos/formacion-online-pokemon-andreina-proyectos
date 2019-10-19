@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './PokeCard.scss';
 
 const PokeCard = (props) => {
   const {imgFront, imgBack, id, name, pokeTypesArray} = props;

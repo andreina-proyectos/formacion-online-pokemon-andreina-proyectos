@@ -6,7 +6,22 @@
 
 .App {
   text-align: center;
-  background-color: #FEE64D;
+  background: linear-gradient(-45deg, #fff826, #fff320, #ffed1a, #ffe813, #ffe30b, #ffd601, #ffca00, #ffbd00, #fda600, #fa8f00, #f57700, #d14f03);
+	background-size: 200% 200%;
+	animation: gradientBG 3s ease infinite;
+  animation: gradientBG 3s ease infinite;
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .header__title {
@@ -14,16 +29,27 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40vh;
-  padding-top:200px;
+  padding-top:270px;
   height: 0px;
   color:transparent;
+  -webkit-animation: moving 1s infinite  alternate;
+  animation: moving 1s infinite  alternate;
+}
+
+@-webkit-keyframes moving {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes moving {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
 
 .search__input {
   background-color: white;
   width:60%;
   height: 30px;
-  margin: 20px 0;
+  margin: 0px 0 30px;
   opacity:.9;
   text-align: center;
 }
@@ -34,69 +60,6 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(20, 1fr);
   gap:10px;
-}
-
-.results__list__pokemon {
-  border: 1px solid rgba(95, 88, 80, 0.589);
-  &:hover{
-    -webkit-box-shadow: 11px 13px 11px -2px rgba(184,171,26,1);
-    -moz-box-shadow: 11px 13px 11px -2px rgba(184,171,26,1);
-    box-shadow: 11px 13px 11px -2px rgba(184,171,26,1);
-    border: 1.2px solid black;
-  }
-}
-
-.img__wrapper {
-  width:100%;
-  background-color: #DFDFDF;
-  padding-bottom:18px;
-  padding-top:10px;
-}
-
-.id__wrapper {
-  position: absolute;
-}
-
-.pokemon_id {
-  background-color: #D1CECA;
-  color:rgb(95, 88, 80);
-  display:inline;
-  padding: 0 10px;
-  position:relative;
-  left:0;
-  top:0;
-}
-
-.info__wrapper {
-  padding: 10px 0 10px;
-  text-align: start;
-  padding-left:10px;
-  background-color: white;
-}
-
-.pokemon__name {
-  text-transform: capitalize;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.types__wrapper {
-  display:flex;
-  justify-content: start;
-}
-
-.pokemon__type {
-  border:1px solid #DFDFDF;
-  color:rgb(95, 88, 80);
-  border-radius: 10px;
-  padding:5px 10px;
-  margin:5px 5px 5px 0;
-  text-transform: uppercase;
-  font-size: 10px;
-}
-
-.hidden {
-  display:none;
 }
 
 @media all and (max-width: 680px) {

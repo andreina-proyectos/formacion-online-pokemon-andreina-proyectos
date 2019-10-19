@@ -13,8 +13,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getMorePokemon(0);
-    // this.getMorePokemon(20);
-    // this.getMorePokemon(40);
+    this.getMorePokemon(20);
+    this.getMorePokemon(40);
     this.toggleFrontBack()
   }
 
