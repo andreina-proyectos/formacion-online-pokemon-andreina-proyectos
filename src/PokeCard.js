@@ -1,18 +1,27 @@
 import React from 'react';
 
 const PokeCard = (props) => {
-  const {img, id, name, pokeTypesArray} = props;
+  const {imgFront, imgBack, id, name, pokeTypesArray} = props;
   return(
     <React.Fragment>
-      <img src={img} alt={name} className="pokemon__img"/>
-      <p className="pokemon_id">ID/{id}</p>
-      <p className="pokemon__name">{name}</p>
+      <div className="img__wrapper">
+        <img src={imgFront} alt={name} className="pokemon__img__front"/>
+        {/* <img src={imgBack} alt={name} className="pokemon__img__back"/> */}
+        <div className="id__wrapper">
+          <p className="pokemon_id">ID/{id}</p>
+        </div>
+      </div>
 
-      {pokeTypesArray.map(pokeType => {
-        return( 
-          <p key={`${id}_${pokeType.type.name}`} className="pokemon__type">{pokeType.type.name}</p>
-        )
-      })}
+      <div className="info__wrapper">
+        <p className="pokemon__name">{name}</p>
+        <div className="types__wrapper">
+          {pokeTypesArray.map(pokeType => {
+            return(
+              <p key={`${id}_${pokeType.type.name}`} className="pokemon__type">{pokeType.type.name}</p>
+            )
+          })}
+        </div>
+      </div>
     </React.Fragment>
   )
 }

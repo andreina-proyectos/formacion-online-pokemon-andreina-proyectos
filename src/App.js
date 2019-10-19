@@ -12,23 +12,33 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const endpoint = 'https://pokeapi.co/api/v2/pokemon';
+    this.getMorePokemon(0);
+    this.getMorePokemon(20);
+    // this.getMorePokemon(40);
+  }
+
+  getMorePokemon(offset) {
+    const endpoint = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}`;
     fetch(endpoint)
       .then(response => response.json())
       .then(data => {
-        let pokeInfoArray = [];
-
+        console.log(data.next)
         for(let i=0; i<data.results.length; i++) {
           const pokeUrl = data.results[i].url;
-          fetch(pokeUrl)
-            .then(response2 => response2.json())
-            .then(pokeInfo => {
-              pokeInfoArray.push(pokeInfo);
-              this.setState({
-                pokeInfoArray: pokeInfoArray,
-              })
-            })
+          this.getPokemonInfo(pokeUrl)
         }
+      })
+  }
+
+  getPokemonInfo(pokeUrl) {
+    fetch(pokeUrl)
+      .then(response2 => response2.json())
+      .then(pokeInfo => {
+        const pokeInfoArray = this.state.pokeInfoArray;
+        pokeInfoArray.push(pokeInfo);
+        this.setState({
+          pokeInfoArray: pokeInfoArray,
+        })
       })
   }
 
@@ -57,10 +67,11 @@ class App extends React.Component {
                   return(
                     <li key={`${pokemon.name}_${pokemon.id}`} className="results__list__pokemon">
                       <PokeCard
-                      img={pokemon.sprites.front_default}
-                      id={pokemon.id}
-                      name={pokemon.name}
-                      pokeTypesArray={pokeTypesArray}
+                        imgFront={pokemon.sprites.front_default}
+                        imgBack={pokemon.sprites.back_default}
+                        id={pokemon.id}
+                        name={pokemon.name}
+                        pokeTypesArray={pokeTypesArray}
                       />
                     </li> 
                   )
