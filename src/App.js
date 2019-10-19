@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.scss';
 import './App.scss';
 import PokeCard from './components/PokeCard';
 import Footer from './components/Footer';
