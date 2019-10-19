@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import PokeCard from './PokeCard';
 
 class App extends React.Component {
@@ -13,8 +13,22 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getMorePokemon(0);
-    this.getMorePokemon(20);
+    // this.getMorePokemon(20);
     // this.getMorePokemon(40);
+    this.toggleFrontBack()
+  }
+
+  toggleFrontBack(){
+    setInterval(() => {
+      const backImgArray = document.querySelectorAll('.pokemon__img__back');
+      for (let backPokemon of backImgArray) {
+        backPokemon.classList.toggle('hidden')
+      }
+      const frontImgArray = document.querySelectorAll('.pokemon__img__front');
+      for(let frontPokemon of frontImgArray) {
+        frontPokemon.classList.toggle('hidden');
+      }
+     }, 1000); 
   }
 
   getMorePokemon(offset) {
@@ -54,7 +68,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <React.Fragment>
-          <input onChange={this.handleInputChange} type="text" className="search__input"/>
+          <div className="header">
+            <h1 className="header__title">Pokemon!Gotta catch 'em all!</h1>
+          </div>
+          <input onChange={this.handleInputChange} type="text" className="search__input" placeholder="Filtra pokemons por nombre..."/>
           <div className="results__wrapper">
             <ul className="results__list">
 

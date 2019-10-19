@@ -6,7 +6,7 @@ const PokeCard = (props) => {
     <React.Fragment>
       <div className="img__wrapper">
         <img src={imgFront} alt={name} className="pokemon__img__front"/>
-        {/* <img src={imgBack} alt={name} className="pokemon__img__back"/> */}
+        <img src={imgBack} alt={name} className="pokemon__img__back hidden"/>
         <div className="id__wrapper">
           <p className="pokemon_id">ID/{id}</p>
         </div>

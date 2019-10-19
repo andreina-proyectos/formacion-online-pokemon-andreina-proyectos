@@ -1,0 +1,115 @@
+*{
+  list-style: none;
+  padding:0;
+  margin:0
+}
+
+.App {
+  text-align: center;
+  background-color: #FEE64D;
+}
+
+.header__title {
+  background-image: url(./images/pokemon_logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40vh;
+  padding-top:200px;
+  height: 0px;
+  color:transparent;
+}
+
+.search__input {
+  background-color: white;
+  width:60%;
+  height: 30px;
+  margin: 20px 0;
+  opacity:.9;
+  text-align: center;
+}
+
+.results__list {
+  margin: 10px 50px 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap:10px;
+}
+
+.results__list__pokemon {
+  border: 1px solid rgba(95, 88, 80, 0.589);
+  &:hover{
+    -webkit-box-shadow: 11px 13px 11px -2px rgba(184,171,26,1);
+    -moz-box-shadow: 11px 13px 11px -2px rgba(184,171,26,1);
+    box-shadow: 11px 13px 11px -2px rgba(184,171,26,1);
+    border: 1.2px solid black;
+  }
+}
+
+.img__wrapper {
+  width:100%;
+  background-color: #DFDFDF;
+  padding-bottom:18px;
+  padding-top:10px;
+}
+
+.id__wrapper {
+  position: absolute;
+}
+
+.pokemon_id {
+  background-color: #D1CECA;
+  color:rgb(95, 88, 80);
+  display:inline;
+  padding: 0 10px;
+  position:relative;
+  left:0;
+  top:0;
+}
+
+.info__wrapper {
+  padding: 10px 0 10px;
+  text-align: start;
+  padding-left:10px;
+  background-color: white;
+}
+
+.pokemon__name {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.types__wrapper {
+  display:flex;
+  justify-content: start;
+}
+
+.pokemon__type {
+  border:1px solid #DFDFDF;
+  color:rgb(95, 88, 80);
+  border-radius: 10px;
+  padding:5px 10px;
+  margin:5px 5px 5px 0;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.hidden {
+  display:none;
+}
+
+@media all and (max-width: 680px) {
+  .results__list {
+    margin: 10px 30px 10px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media all and (max-width: 500px) {
+  .results__list {
+    margin: 10px 30px 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
