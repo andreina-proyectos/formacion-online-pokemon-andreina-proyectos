@@ -9,8 +9,7 @@ const Footer = () => {
     className="logo__github"/>
     <p className="footer__text">
     Open Source project created with
-      <span aria-label="Heart" className="span__heart">❣️
-      </span> by
+      <span role="img" aria-label="heart">❣️</span> by
       <a className="link__github" rel="noopener noreferrer" href="https://github.com/andreina-proyectos" target="_blank"> <br/>
       @andreina-proyectos </a>
     </p>
