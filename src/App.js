@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.scss';
-import PokeCard from './PokeCard';
-import Footer from './Footer';
+import PokeCard from './components/PokeCard';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 class App extends React.Component {
   constructor(props) {
@@ -71,9 +72,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <React.Fragment>
-          <div className="header">
-            <h1 className="header__title">Pokemon!Gotta catch 'em all!</h1>
-          </div>
+          <Header/>
           <input onChange={this.handleInputChange} type="text" className="search__input" placeholder="Filtra pokemons por nombre..."/>
           <div className="results__wrapper">
             <ul className="results__list">

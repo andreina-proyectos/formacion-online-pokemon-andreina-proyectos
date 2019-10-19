@@ -1,0 +1,20 @@
+.header__title {
+  background-image: url(../images/pokemon_logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40vh;
+  padding-top:270px;
+  height: 0px;
+  color:transparent;
+  -webkit-animation: moving 1s infinite  alternate;
+  animation: moving 1s infinite  alternate;
+}
+
+@-webkit-keyframes moving {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes moving {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}

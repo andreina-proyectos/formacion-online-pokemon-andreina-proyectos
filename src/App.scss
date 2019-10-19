@@ -6,10 +6,10 @@
 
 .App {
   text-align: center;
-  background: linear-gradient(-45deg, #fff826, #fff320, #ffed1a, #ffe813, #ffe30b, #ffd601, #ffca00, #ffbd00, #fda600, #fa8f00, #f57700, #d14f03);
+  background: linear-gradient(-45deg,  #c20000, #fff826, #fff320, #ffed1a, #ffe813, #ffe30b, #ffd601, #fa8f00, #f57700, #d14f03);
 	background-size: 200% 200%;
-	animation: gradientBG 3s ease infinite;
-  animation: gradientBG 3s ease infinite;
+	animation: gradientBG 2s ease infinite;
+  animation: gradientBG 2s ease infinite;
 }
 
 @keyframes gradientBG {
@@ -24,31 +24,10 @@
 	}
 }
 
-.header__title {
-  background-image: url(./images/pokemon_logo.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 40vh;
-  padding-top:270px;
-  height: 0px;
-  color:transparent;
-  -webkit-animation: moving 1s infinite  alternate;
-  animation: moving 1s infinite  alternate;
-}
-
-@-webkit-keyframes moving {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-@keyframes moving {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-
 .search__input {
   background-color: white;
   width:60%;
-  height: 30px;
+  height: 40px;
   margin: 0px 0 30px;
   opacity:.9;
   text-align: center;
