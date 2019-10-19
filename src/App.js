@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import PokeCard from './PokeCard';
+import Footer from './Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,8 +14,10 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getMorePokemon(0);
-    this.getMorePokemon(20);
-    this.getMorePokemon(40);
+    // this.getMorePokemon(20);
+    // this.getMorePokemon(40);
+    // this.getMorePokemon(60);
+    // this.getMorePokemon(80);
     this.toggleFrontBack()
   }
 
@@ -96,6 +99,7 @@ class App extends React.Component {
              
             </ul>
           </div>
+          <Footer/>
         </React.Fragment>
       </div>
     );
